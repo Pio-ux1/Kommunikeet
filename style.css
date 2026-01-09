@@ -740,3 +740,12 @@ footer{
   width: auto;
   display: block;
 }
+.logo{
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+.logo.small{
+  height: 34px;
+}
