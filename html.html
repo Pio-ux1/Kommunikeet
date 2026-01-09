@@ -1,0 +1,788 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>kommunikeet – Firmensprachkurse & Sprachtraining deutschlandweit</title>
+  <meta name="description" content="kommunikeet. DAS SPRACHENINSTITUT – praxisnahe Sprachkurse (Business English, Deutsch als Fremdsprache, Polnisch u. v. m.), online & inhouse deutschlandweit. Jetzt unverbindliches Angebot anfordern." />
+
+  <style>
+    :root{
+      --bg: #fbfcfb;
+      --card: #ffffff;
+      --text: #142214;
+      --muted: #4a5b4a;
+      --line: rgba(20,34,20,.10);
+      --accent: #79b84b;         /* kommunikeet-ähnliches Grün */
+      --accent-2: #a8d97b;       /* helles Grün */
+      --shadow: 0 14px 40px rgba(20,34,20,.10);
+      --radius: 18px;
+      --max: 1120px;
+    }
+
+    *{ box-sizing: border-box; }
+    html,body{ height: 100%; }
+    body{
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color: var(--text);
+      background: radial-gradient(900px 600px at 10% 0%, rgba(121,184,75,.16), transparent 55%),
+                  radial-gradient(900px 600px at 90% 10%, rgba(168,217,123,.14), transparent 60%),
+                  var(--bg);
+      line-height: 1.5;
+    }
+
+    a{ color: inherit; text-decoration: none; }
+    .container{ width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+
+    /* Topbar */
+    .topbar{
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(251,252,251,.78);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar-inner{
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 0;
+      gap: 16px;
+    }
+
+    /* “Logo” (HTML-only) */
+    .brand{
+      display: flex; align-items: center; gap: 12px;
+      min-width: 200px;
+    }
+    .mark{
+      width: 40px; height: 40px; border-radius: 999px;
+      background:
+        radial-gradient(circle at 35% 35%, rgba(255,255,255,.85) 0 26%, transparent 27%),
+        conic-gradient(from 190deg, var(--accent) 0 55%, rgba(20,34,20,.10) 55% 100%);
+      border: 1px solid rgba(20,34,20,.12);
+      box-shadow: 0 10px 24px rgba(20,34,20,.10);
+    }
+    .brand-text{ display: grid; line-height: 1.1; }
+    .brand-text strong{
+      font-size: 18px;
+      letter-spacing: .2px;
+    }
+    .brand-text span{
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: .6px;
+      text-transform: uppercase;
+    }
+
+    nav{
+      display: flex; align-items: center; gap: 18px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .navlink{
+      font-size: 14px;
+      color: rgba(20,34,20,.85);
+      padding: 8px 10px;
+      border-radius: 10px;
+    }
+    .navlink:hover{ background: rgba(121,184,75,.10); }
+
+    .btn{
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(20,34,20,.14);
+      background: #fff;
+      box-shadow: 0 10px 24px rgba(20,34,20,.08);
+      font-weight: 650;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+    .btn:hover{ transform: translateY(-1px); }
+    .btn:active{ transform: translateY(0); }
+    .btn.primary{
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      border-color: rgba(20,34,20,.10);
+      color: #0f1b0f;
+    }
+    .btn.ghost{
+      background: rgba(255,255,255,.60);
+    }
+
+    /* Hero */
+    .hero{
+      padding: 54px 0 26px;
+    }
+    .hero-grid{
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+    .kicker{
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.65);
+      border-radius: 999px;
+      color: rgba(20,34,20,.85);
+      font-size: 13px;
+      width: fit-content;
+    }
+    .dot{
+      width: 10px; height: 10px; border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(121,184,75,.12);
+    }
+    h1{
+      margin: 14px 0 10px;
+      font-size: clamp(30px, 4vw, 46px);
+      letter-spacing: -.6px;
+      line-height: 1.07;
+    }
+    .lead{
+      margin: 0;
+      font-size: 16px;
+      color: rgba(20,34,20,.78);
+      max-width: 56ch;
+    }
+    .hero-cta{
+      display: flex; gap: 12px; flex-wrap: wrap;
+      margin-top: 18px;
+      align-items: center;
+    }
+    .mini{
+      display: flex; gap: 10px; flex-wrap: wrap;
+      margin-top: 18px;
+      color: rgba(20,34,20,.75);
+      font-size: 13px;
+    }
+    .pill{
+      padding: 8px 10px;
+      border: 1px dashed rgba(20,34,20,.20);
+      border-radius: 999px;
+      background: rgba(255,255,255,.60);
+    }
+
+    /* Side card (form) */
+    .panel{
+      background: rgba(255,255,255,.78);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px;
+      overflow: hidden;
+      position: relative;
+    }
+    .panel::before{
+      content: "";
+      position: absolute;
+      inset: -120px -80px auto auto;
+      width: 240px; height: 240px;
+      background: radial-gradient(circle at 30% 30%, rgba(121,184,75,.35), transparent 60%);
+      filter: blur(2px);
+      pointer-events: none;
+    }
+    .panel h3{
+      margin: 2px 0 4px;
+      font-size: 18px;
+      letter-spacing: -.2px;
+    }
+    .panel p{
+      margin: 0 0 14px;
+      color: rgba(20,34,20,.74);
+      font-size: 13px;
+    }
+    .form{
+      display: grid;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    label{
+      display: grid;
+      gap: 6px;
+      font-size: 12px;
+      color: rgba(20,34,20,.72);
+    }
+    input, select, textarea{
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid rgba(20,34,20,.16);
+      padding: 12px 12px;
+      background: rgba(255,255,255,.88);
+      color: var(--text);
+      outline: none;
+      font: inherit;
+      font-size: 14px;
+    }
+    input:focus, select:focus, textarea:focus{
+      border-color: rgba(121,184,75,.70);
+      box-shadow: 0 0 0 5px rgba(121,184,75,.18);
+    }
+    textarea{ min-height: 92px; resize: vertical; }
+    .fineprint{
+      margin: 10px 0 0;
+      font-size: 12px;
+      color: rgba(20,34,20,.62);
+    }
+    .fineprint a{ text-decoration: underline; text-decoration-color: rgba(20,34,20,.30); }
+
+    /* Sections */
+    section{ padding: 26px 0; }
+    .section-head{
+      display: flex; align-items: flex-end; justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 14px;
+    }
+    .section-head h2{
+      margin: 0;
+      font-size: 22px;
+      letter-spacing: -.2px;
+    }
+    .section-head p{
+      margin: 0;
+      color: rgba(20,34,20,.72);
+      max-width: 70ch;
+      font-size: 14px;
+    }
+
+    .grid-3{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .card{
+      background: rgba(255,255,255,.78);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 26px rgba(20,34,20,.07);
+      padding: 16px;
+    }
+    .card h3{
+      margin: 2px 0 6px;
+      font-size: 16px;
+      letter-spacing: -.2px;
+    }
+    .card p{
+      margin: 0;
+      color: rgba(20,34,20,.72);
+      font-size: 14px;
+    }
+    .icon{
+      width: 38px; height: 38px;
+      border-radius: 14px;
+      display: grid; place-items: center;
+      background: rgba(121,184,75,.14);
+      border: 1px solid rgba(121,184,75,.22);
+      margin-bottom: 10px;
+    }
+    .icon svg{ width: 20px; height: 20px; }
+
+    /* Two-column detail */
+    .split{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .list{
+      margin: 12px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+    .list li{
+      display: flex; gap: 10px; align-items: flex-start;
+      color: rgba(20,34,20,.76);
+      font-size: 14px;
+    }
+    .check{
+      width: 20px; height: 20px; flex: 0 0 20px;
+      border-radius: 999px;
+      background: rgba(121,184,75,.18);
+      border: 1px solid rgba(121,184,75,.32);
+      display: grid; place-items: center;
+      margin-top: 2px;
+    }
+    .check svg{ width: 14px; height: 14px; }
+
+    /* Social proof */
+    .quote{
+      position: relative;
+      overflow: hidden;
+    }
+    .quote::after{
+      content: "";
+      position: absolute;
+      inset: auto -120px -140px auto;
+      width: 260px; height: 260px;
+      background: radial-gradient(circle at 30% 30%, rgba(168,217,123,.35), transparent 60%);
+      pointer-events: none;
+    }
+    blockquote{
+      margin: 0;
+      font-size: 15px;
+      color: rgba(20,34,20,.80);
+      line-height: 1.6;
+    }
+    .cite{
+      margin-top: 10px;
+      font-size: 13px;
+      color: rgba(20,34,20,.70);
+    }
+
+    /* CTA band */
+    .band{
+      margin-top: 12px;
+      padding: 18px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(20,34,20,.12);
+      background: linear-gradient(135deg, rgba(121,184,75,.18), rgba(255,255,255,.75));
+      box-shadow: 0 12px 36px rgba(20,34,20,.09);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .band strong{
+      font-size: 16px;
+      letter-spacing: -.2px;
+    }
+    .band span{
+      display: block;
+      color: rgba(20,34,20,.74);
+      font-size: 13px;
+      margin-top: 4px;
+    }
+
+    /* Footer */
+    footer{
+      padding: 28px 0 40px;
+      border-top: 1px solid var(--line);
+      margin-top: 18px;
+      color: rgba(20,34,20,.70);
+      font-size: 13px;
+    }
+    .footer-grid{
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+    .footer-grid a{ text-decoration: underline; text-decoration-color: rgba(20,34,20,.25); }
+    .muted{ color: rgba(20,34,20,.70); }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      nav{ justify-content: flex-start; }
+      .grid-3{ grid-template-columns: 1fr; }
+      .split{ grid-template-columns: 1fr; }
+      .footer-grid{ grid-template-columns: 1fr; }
+      .brand{ min-width: auto; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="#top" aria-label="kommunikeet Start">
+        <div class="mark" aria-hidden="true"></div>
+        <div class="brand-text">
+          <strong>kommunikeet</strong>
+          <span>DAS SPRACHENINSTITUT</span>
+        </div>
+      </a>
+
+      <nav aria-label="Navigation">
+        <a class="navlink" href="#leistungen">Leistungen</a>
+        <a class="navlink" href="#fuerwen">Für wen?</a>
+        <a class="navlink" href="#ablauf">Ablauf</a>
+        <a class="navlink" href="#referenzen">Feedback</a>
+        <a class="btn ghost" href="#kontakt">Kontakt</a>
+        <a class="btn primary" href="#angebot">Angebot anfordern</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main id="top" class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="kicker"><span class="dot" aria-hidden="true"></span> Sprachtraining & Übersetzungen – deutschlandweit, online & inhouse</div>
+        <h1>Wir entwirren Ihren Sprachenknoten – für klare Kommunikation im Business.</h1>
+        <p class="lead">
+          Mit praxisnahen Firmensprachkursen, Coaching und interkulturellem Training bringt <strong>kommunikeet</strong> Teams sicher
+          durch Meetings, Telefonate, E-Mails und Präsentationen – auf Deutsch, Englisch, Polnisch und vielen weiteren Sprachen.
+        </p>
+
+        <div class="hero-cta">
+          <a class="btn primary" href="#angebot">
+            Unverbindliches Angebot
+            <span aria-hidden="true">→</span>
+          </a>
+          <a class="btn" href="#leistungen">Leistungen ansehen</a>
+        </div>
+
+        <div class="mini" aria-label="Highlights">
+          <span class="pill">Online-Kurse & Inhouse-Trainings</span>
+          <span class="pill">Individuell · praxisnah · effektiv</span>
+          <span class="pill">Deutschlandweit verfügbar</span>
+        </div>
+      </div>
+
+      <aside class="panel" id="angebot" aria-label="Angebot anfordern">
+        <h3>In 2 Minuten zum passenden Kurs</h3>
+        <p>Kurze Angaben reichen. Sie erhalten ein passgenaues, unverbindliches Angebot für Ihr Team – deutschlandweit.</p>
+
+        <!-- Hinweis: Ohne JavaScript sendet das Formular z. B. an Ihren Mail-/Backend-Endpunkt. -->
+        <form class="form" action="#" method="post">
+          <label>
+            Unternehmen / Organisation
+            <input name="company" type="text" placeholder="z. B. Muster GmbH" />
+          </label>
+
+          <label>
+            Schwerpunkt
+            <select name="focus">
+              <option value="">Bitte wählen…</option>
+              <option>Firmensprachkurs (Business English / DaF)</option>
+              <option>Sprach-Coaching (1:1)</option>
+              <option>Interkulturelles Training</option>
+              <option>Übersetzung (Fach-/Beglaubigt nach Bedarf)</option>
+            </select>
+          </label>
+
+          <label>
+            Sprache(n)
+            <input name="languages" type="text" placeholder="z. B. Englisch, Deutsch, Polnisch" />
+          </label>
+
+          <label>
+            Format
+            <select name="format">
+              <option value="">Bitte wählen…</option>
+              <option>Online</option>
+              <option>Inhouse (deutschlandweit)</option>
+              <option>Kombination</option>
+            </select>
+          </label>
+
+          <label>
+            Kurzinfo (Ziel, Niveau, Teilnehmerzahl)
+            <textarea name="message" placeholder="z. B. Telefonieren & Präsentieren, B1→B2, 8 TN, 10 Wochen"></textarea>
+          </label>
+
+          <button class="btn primary" type="submit">Angebot anfordern</button>
+
+          <p class="fineprint">
+            Indem Sie absenden, stimmen Sie der Kontaktaufnahme zu. Optional: Verlinken Sie hier Ihre <a href="#impressum">Datenschutzinfo</a>.
+          </p>
+        </form>
+      </aside>
+    </div>
+  </main>
+
+  <!-- SERVICES -->
+  <section id="leistungen">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Leistungen, die in den Alltag wirken</h2>
+          <p>Kein Lehrbuch-Training von der Stange: Inhalte, Tempo und Formate richten sich nach Ihren Situationen und Zielen.</p>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 7h16M4 12h16M4 17h10"></path>
+            </svg>
+          </div>
+          <h3>Firmensprachkurse</h3>
+          <p>Business English, Deutsch für den Beruf, Polnisch u. v. m. – online oder inhouse, deutschlandweit.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 7l-8 8-4-4"></path>
+              <path d="M4 7h6"></path>
+            </svg>
+          </div>
+          <h3>Coaching & Module</h3>
+          <p>Kompakte Trainings für Telefonieren, Small Talk, Präsentationen, E-Mail-Stil, Meetings – direkt anwendbar.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 21s7-4.35 7-11a7 7 0 10-14 0c0 6.65 7 11 7 11z"></path>
+              <path d="M9.5 10.5a2.5 2.5 0 015 0c0 1.5-1 2-2 2s-1 1-1 2"></path>
+            </svg>
+          </div>
+          <h3>Interkulturelles Training</h3>
+          <p>Mehr Klarheit, weniger Missverständnisse: Kommunikations- und Handlungskompetenz für internationale Zusammenarbeit.</p>
+        </div>
+      </div>
+
+      <div class="band" role="note" aria-label="Deutschlandweit-Hinweis">
+        <div>
+          <strong>Deutschlandweit einsatzbereit</strong>
+          <span>Trainer:innen und Formate für Teams in allen Bundesländern – vor Ort oder online.</span>
+        </div>
+        <a class="btn primary" href="#angebot">Angebot anfordern →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOR WHOM + VALUE -->
+  <section id="fuerwen">
+    <div class="container split">
+      <div class="card">
+        <h3>Für wen ist kommunikeet ideal?</h3>
+        <p class="muted">Typische Einsatzfelder, die wir deutschlandweit unterstützen:</p>
+
+        <ul class="list">
+          <li>
+            <span class="check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            <span><strong>Unternehmen</strong>: Fach- und Führungskräfte, Produktion, Einkauf, Management – Kommunikation, die sitzt.</span>
+          </li>
+          <li>
+            <span class="check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            <span><strong>Hochschulen</strong>: akademisches Englisch, Short Courses, Trainings für Verwaltung, Lehre & Forschung.</span>
+          </li>
+          <li>
+            <span class="check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            <span><strong>Behörden & Institutionen</strong>: berufsbezogene Sprachkompetenzen für sichere Abläufe.</span>
+          </li>
+          <li>
+            <span class="check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            <span><strong>Privatpersonen</strong>: professionell lernen – effizient und mit Freude.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Was Sie konkret gewinnen</h3>
+        <p class="muted">Ergebnisse, die in Projekten und Alltag spürbar sind.</p>
+
+        <ul class="list">
+          <li>
+            <span class="check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            <span><strong>Souverän auftreten</strong> in Meetings, Calls und Präsentationen – ohne „Übersetzen im Kopf“.</span>
+          </li>
+          <li>
+            <span class="check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            <span><strong>Missverständnisse reduzieren</strong> durch klare Sprache, passende Formulierungen und Kulturverständnis.</span>
+          </li>
+          <li>
+            <span class="check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            <span><strong>Zeit sparen</strong> mit maßgeschneiderten Inhalten statt generischer Kurse.</span>
+          </li>
+          <li>
+            <span class="check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            <span><strong>Flexibel skalieren</strong>: Einzelcoaching, Kleingruppe oder Teamtraining – online, inhouse oder hybrid.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="ablauf">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>So starten Sie – schnell, sauber, passgenau</h2>
+          <p>Ein klarer Ablauf, damit Ihr Training ohne Reibungsverluste anläuft.</p>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v6"></path><path d="M12 16v6"></path>
+              <path d="M4.93 4.93l4.24 4.24"></path><path d="M14.83 14.83l4.24 4.24"></path>
+              <path d="M2 12h6"></path><path d="M16 12h6"></path>
+              <path d="M4.93 19.07l4.24-4.24"></path><path d="M14.83 9.17l4.24-4.24"></path>
+            </svg>
+          </div>
+          <h3>1) Bedarf klären</h3>
+          <p>Ziele, Situationen, Niveau, Teilnehmerzahl – wir strukturieren kurz und präzise.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 19h16"></path>
+              <path d="M6 16V8"></path>
+              <path d="M10 16V5"></path>
+              <path d="M14 16v-7"></path>
+              <path d="M18 16v-9"></path>
+            </svg>
+          </div>
+          <h3>2) Training designen</h3>
+          <p>Module, Materialien und Praxisfälle – abgestimmt auf Branche, Rolle und Alltag.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a4 4 0 01-4 4H7l-4 3V7a4 4 0 014-4h10a4 4 0 014 4z"></path>
+            </svg>
+          </div>
+          <h3>3) Umsetzen & nachschärfen</h3>
+          <p>Regelmäßige Checks, Transfer in den Job, Feinschliff – damit Fortschritt messbar wird.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section id="referenzen">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Feedback, das zählt</h2>
+          <p>Ergebnisse, die im Alltag sichtbar sind – vom Telefonat bis zur Präsentation.</p>
+        </div>
+      </div>
+
+      <div class="card quote">
+        <blockquote>
+          „…waren wunschgemäß gute bis hervorragende Fortschritte im Gebrauch der englischen Sprache zu verzeichnen.
+          Dabei übertrafen die tatsächlich realisierten Inhalte das ursprünglich vereinbarte Maß.“
+        </blockquote>
+        <div class="cite">– Unternehmensfeedback (Beispielzitat aus Referenzen)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="kontakt">
+    <div class="container split">
+      <div class="card">
+        <h3>Kontakt</h3>
+        <p class="muted">
+          Sie möchten ein Training deutschlandweit planen oder kurzfristig ein Coaching starten?
+          Schreiben Sie uns – wir melden uns zügig zurück.
+        </p>
+
+        <ul class="list" aria-label="Kontaktinfos">
+          <li>
+            <span class="check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.8 19.8 0 012.08 4.18 2 2 0 014.06 2h3a2 2 0 012 1.72c.12.86.3 1.7.54 2.5a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.58-1.6a2 2 0 012.11-.45c.8.24 1.64.42 2.5.54A2 2 0 0122 16.92z"/></svg>
+            </span>
+            <span><strong>Telefon</strong>: +49 (0)35829 646 060 (Beispiel, bitte bei Bedarf anpassen)</span>
+          </li>
+          <li>
+            <span class="check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
+            </span>
+            <span><strong>E-Mail</strong>: mail(at)kommunikeet.de (Beispiel, bitte bei Bedarf anpassen)</span>
+          </li>
+          <li>
+            <span class="check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-4.35 7-11a7 7 0 10-14 0c0 6.65 7 11 7 11z"/></svg>
+            </span>
+            <span><strong>Deutschlandweit</strong>: Online / Inhouse in allen Bundesländern</span>
+          </li>
+        </ul>
+
+        <div class="band" style="margin-top:16px;">
+          <div>
+            <strong>Sie haben ein konkretes Datum?</strong>
+            <span>Tragen Sie es ins Anfragefeld ein – wir planen direkt mit.</span>
+          </div>
+          <a class="btn primary" href="#angebot">Jetzt anfragen →</a>
+        </div>
+      </div>
+
+      <div class="card" id="impressum">
+        <h3>Impressum & Datenschutz (Platzhalter)</h3>
+        <p class="muted">
+          Diese Landingpage ist ein HTML/CSS-Entwurf. Ergänzen Sie hier Ihre rechtlichen Pflichtangaben und verlinken Sie
+          auf die vollständige Datenschutzerklärung Ihrer Domain.
+        </p>
+        <ul class="list">
+          <li>
+            <span class="check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19h16"/><path d="M6 16V8"/><path d="M10 16V5"/><path d="M14 16v-7"/><path d="M18 16v-9"/></svg>
+            </span>
+            <span><strong>Tipp</strong>: Nutzen Sie dieselben Angaben wie auf Ihrer Hauptseite (Adresse, Kontakt, Verantwortliche).</span>
+          </li>
+          <li>
+            <span class="check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l7 4v6c0 5-3 9-7 10-4-1-7-5-7-10V6l7-4z"/></svg>
+            </span>
+            <span><strong>Formulare</strong>: Hinterlegen Sie einen echten <code>action</code>-Endpunkt (Server/Mailer), sobald verfügbar.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="brand" style="padding:0; gap:10px;">
+          <div class="mark" aria-hidden="true" style="width:34px;height:34px;"></div>
+          <div class="brand-text">
+            <strong>kommunikeet</strong>
+            <span>DAS SPRACHENINSTITUT</span>
+          </div>
+        </div>
+        <p class="muted" style="margin:10px 0 0;">
+          Sprachtraining · Übersetzungen · Interkulturelles Training – deutschlandweit.
+        </p>
+      </div>
+
+      <div>
+        <strong>Navigation</strong>
+        <div style="display:grid; gap:8px; margin-top:10px;">
+          <a href="#leistungen">Leistungen</a>
+          <a href="#ablauf">Ablauf</a>
+          <a href="#referenzen">Feedback</a>
+          <a href="#angebot">Angebot anfordern</a>
+        </div>
+      </div>
+
+      <div>
+        <strong>Hinweis</strong>
+        <p class="muted" style="margin:10px 0 0;">
+          Dieser Entwurf enthält keine Skripte und keine externen Assets (HTML/CSS only). Farben und Typografie sind an
+          den kommunikeet-Look angelehnt, aber als eigenständige Landingpage für Werbung „kommunikeet deutschlandweit“ umgesetzt.
+        </p>
+      </div>
+    </div>
+
+    <div class="container" style="margin-top:16px; border-top:1px solid rgba(20,34,20,.10); padding-top:14px;">
+      <span class="muted">© <span id="year">2026</span> kommunikeet – Landingpage Entwurf</span>
+    </div>
+  </footer>
+</body>
+</html>
