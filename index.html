@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>kommunikeet – Firmensprachkurse & Sprachtraining deutschlandweit</title>
-  <meta name="description" content="kommunikeet. DAS SPRACHENINSTITUT – praxisnahe Sprachkurse (Business English, Deutsch als Fremdsprache, Polnisch u. v. m.), online & inhouse deutschlandweit. Jetzt unverbindliches Angebot anfordern." />
+  <meta name="description" content="kommunikeet. DAS SPRACHENINSTITUT – praxisnahe Sprachkurse (Business English, Deutsch als Fremdsprache, Polnisch u. v. m.), online & inhouse deutschlandweit. Jetzt passgenaues Kursangebot erhalten." />
 
   <style>
     :root{
@@ -13,8 +13,8 @@
       --text: #142214;
       --muted: #4a5b4a;
       --line: rgba(20,34,20,.10);
-      --accent: #79b84b;         /* kommunikeet-ähnliches Grün */
-      --accent-2: #a8d97b;       /* helles Grün */
+      --accent: #79b84b;
+      --accent-2: #a8d97b;
       --shadow: 0 14px 40px rgba(20,34,20,.10);
       --radius: 18px;
       --max: 1120px;
@@ -48,18 +48,10 @@
       gap: 16px;
     }
 
-    /* “Logo” (HTML-only) */
+    /* Brand */
     .brand{
       display: flex; align-items: center; gap: 12px;
       min-width: 200px;
-    }
-    .mark{
-      width: 40px; height: 40px; border-radius: 999px;
-      background:
-        radial-gradient(circle at 35% 35%, rgba(255,255,255,.85) 0 26%, transparent 27%),
-        conic-gradient(from 190deg, var(--accent) 0 55%, rgba(20,34,20,.10) 55% 100%);
-      border: 1px solid rgba(20,34,20,.12);
-      box-shadow: 0 10px 24px rgba(20,34,20,.10);
     }
     .brand-text{ display: grid; line-height: 1.1; }
     .brand-text strong{
@@ -97,6 +89,7 @@
       font-weight: 650;
       font-size: 14px;
       white-space: nowrap;
+      cursor: pointer;
     }
     .btn:hover{ transform: translateY(-1px); }
     .btn:active{ transform: translateY(0); }
@@ -110,14 +103,12 @@
     }
 
     /* Hero */
-    .hero{
-      padding: 54px 0 26px;
-    }
+    .hero{ padding: 54px 0 18px; }
     .hero-grid{
       display: grid;
       grid-template-columns: 1.15fr .85fr;
       gap: 28px;
-      align-items: stretch;
+      align-items: start;
     }
     .kicker{
       display: inline-flex; align-items: center; gap: 10px;
@@ -144,7 +135,7 @@
       margin: 0;
       font-size: 16px;
       color: rgba(20,34,20,.78);
-      max-width: 56ch;
+      max-width: 60ch;
     }
     .hero-cta{
       display: flex; gap: 12px; flex-wrap: wrap;
@@ -162,6 +153,47 @@
       border: 1px dashed rgba(20,34,20,.20);
       border-radius: 999px;
       background: rgba(255,255,255,.60);
+    }
+
+    /* Hero right column */
+    .hero-right{
+      display: grid;
+      gap: 14px;
+      align-items: stretch;
+    }
+    .hero-visual{
+      background: rgba(255,255,255,.78);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+      min-height: 210px;
+    }
+    .hero-visual::before{
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(135deg, rgba(121,184,75,.18), rgba(255,255,255,.60)),
+        radial-gradient(900px 500px at 20% 20%, rgba(121,184,75,.25), transparent 55%),
+        radial-gradient(900px 500px at 80% 10%, rgba(168,217,123,.20), transparent 60%);
+      pointer-events: none;
+    }
+    .hero-visual-inner{
+      position: relative;
+      padding: 16px;
+      display: grid;
+      gap: 10px;
+    }
+    .hero-visual strong{
+      font-size: 14px;
+      letter-spacing: -.1px;
+    }
+    .hero-visual p{
+      margin: 0;
+      font-size: 13px;
+      color: rgba(20,34,20,.74);
     }
 
     /* Side card (form) */
@@ -358,6 +390,25 @@
       margin-top: 4px;
     }
 
+    /* Stats + segmentation */
+    .tight{ padding: 14px 0; }
+    .stat strong{
+      display: inline-block;
+      font-size: 22px;
+      letter-spacing: -.2px;
+    }
+    .stat span{
+      display: block;
+      margin-top: 6px;
+      color: rgba(20,34,20,.72);
+      font-size: 13px;
+    }
+    .seg-card{
+      display: block;
+      transition: transform .12s ease;
+    }
+    .seg-card:hover{ transform: translateY(-2px); }
+
     /* Footer */
     footer{
       padding: 28px 0 40px;
@@ -385,6 +436,13 @@
       .brand{ min-width: auto; }
     }
   </style>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzws8qv0dh");
+</script>
 </head>
 
 <body>
@@ -392,7 +450,7 @@
   <header class="topbar">
     <div class="container topbar-inner">
       <a class="brand" href="#top" aria-label="kommunikeet Start">
-         <img src="logo.png" alt="kommunikeet logo" class="logo" />
+        <img src="logo.png" alt="kommunikeet logo" class="logo" />
         <div class="brand-text">
           <strong>kommunikeet</strong>
           <span>DAS SPRACHENINSTITUT</span>
@@ -401,11 +459,11 @@
 
       <nav aria-label="Navigation">
         <a class="navlink" href="#leistungen">Leistungen</a>
-        <a class="navlink" href="#fuerwen">Für wen?</a>
+        <a class="navlink" href="#zielgruppen">Für wen?</a>
         <a class="navlink" href="#ablauf">Ablauf</a>
         <a class="navlink" href="#referenzen">Feedback</a>
         <a class="btn ghost" href="#kontakt">Kontakt</a>
-        <a class="btn primary" href="#angebot">Angebot anfordern</a>
+        <a class="btn primary" href="#angebot">Kursangebot erhalten</a>
       </nav>
     </div>
   </header>
@@ -414,18 +472,24 @@
   <main id="top" class="hero">
     <div class="container hero-grid">
       <div>
-        <div class="kicker"><span class="dot" aria-hidden="true"></span> Sprachtraining & Übersetzungen – deutschlandweit, online & inhouse</div>
-        <h1>Wir entwirren Ihren Sprachenknoten – für klare Kommunikation im Business.</h1>
+        <div class="kicker">
+          <span class="dot" aria-hidden="true"></span>
+          Firmensprachkurse · Coaching · Übersetzungen – deutschlandweit, online & inhouse
+        </div>
+
+        <h1>
+          Teams sicher durch jede geschäftliche Kommunikation –
+          ohne Angst vor Meetings, Telefonaten oder Präsentationen.
+        </h1>
+
         <p class="lead">
-          Mit praxisnahen Firmensprachkursen, Coaching und interkulturellem Training bringt <strong>kommunikeet</strong> Teams sicher
-          durch Meetings, Telefonate, E-Mails und Präsentationen – auf Deutsch, Englisch, Polnisch und vielen weiteren Sprachen.
+          Praxisnahe Firmensprachkurse, Coaching und Übersetzungen, die sofort wirken:
+          weniger Missverständnisse, mehr Sicherheit, mehr Wirkung im Business-Alltag.
+          Auf Deutsch, Englisch, Polnisch und vielen weiteren Sprachen.
         </p>
 
         <div class="hero-cta">
-          <a class="btn primary" href="#angebot">
-            Unverbindliches Angebot
-            <span aria-hidden="true">→</span>
-          </a>
+          <a class="btn primary" href="#angebot">Jetzt passgenaues Kursangebot erhalten →</a>
           <a class="btn" href="#leistungen">Leistungen ansehen</a>
         </div>
 
@@ -436,57 +500,137 @@
         </div>
       </div>
 
-      <aside class="panel" id="angebot" aria-label="Angebot anfordern">
-        <h3>In 2 Minuten zum passenden Kurs</h3>
-        <p>Kurze Angaben reichen. Sie erhalten ein passgenaues, unverbindliches Angebot für Ihr Team – deutschlandweit.</p>
+      <div class="hero-right">
+        <!-- HERO VISUAL (Placeholder) -->
+        <div class="hero-visual" aria-label="Visual">
+          <div class="hero-visual-inner">
+            <strong>Mehr Orientierung, weniger Skepsis</strong>
+            <p>Platzhalter für ein Hero-Bild (Training/Business-Kontext) oder Illustration. Optional mit Kundenlogos.</p>
+            <ul class="list" style="margin-top:6px;">
+              <li>
+                <span class="check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                </span>
+                <span><strong>Transfer in den Job</strong> statt Lehrbuch-Training</span>
+              </li>
+              <li>
+                <span class="check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                </span>
+                <span><strong>Messbare Fortschritte</strong> durch Check-ins & Nachschärfen</span>
+              </li>
+            </ul>
+          </div>
+        </div>
 
-        <!-- Hinweis: Ohne JavaScript sendet das Formular z. B. an Ihren Mail-/Backend-Endpunkt. -->
-        <form class="form" action="#" method="post">
-          <label>
-            Unternehmen / Organisation
-            <input name="company" type="text" placeholder="z. B. Muster GmbH" />
-          </label>
+        <aside class="panel" id="angebot" aria-label="Kursangebot erhalten">
+          <h3>In 2 Minuten zum passenden Kurs</h3>
+          <p>Kurze Angaben genügen – wir melden uns persönlich mit einer Empfehlung und einem passgenauen, unverbindlichen Kursangebot.</p>
 
-          <label>
-            Schwerpunkt
-            <select name="focus">
-              <option value="">Bitte wählen…</option>
-              <option>Firmensprachkurs (Business English / DaF)</option>
-              <option>Sprach-Coaching (1:1)</option>
-              <option>Interkulturelles Training</option>
-              <option>Übersetzung (Fach-/Beglaubigt nach Bedarf)</option>
-            </select>
-          </label>
+          <!-- Formular connected with google apps -->
+          <form 
+             id="angebotForm"
+             class="form" 
+             action="https://script.google.com/macros/s/AKfycbw9l31mWTw3LgY3qJxY4PKJ9W1zpT-ExIqv-LtUQMLAXvQHtgBfjzDRH9XRFP1humTF6g/exec" 
+             method="post"
+             target="hidden_iframe"
+             >
+            <label>
+              Unternehmen / Organisation
+              <input name="company" type="text" placeholder="z. B. Muster GmbH" />
+            </label>
 
-          <label>
-            Sprache(n)
-            <input name="languages" type="text" placeholder="z. B. Englisch, Deutsch, Polnisch" />
-          </label>
+            <label>
+              Schwerpunkt
+              <select name="focus">
+                <option value="">Bitte wählen…</option>
+                <option>Firmensprachkurs (Business English / DaF)</option>
+                <option>Sprach-Coaching (1:1)</option>
+                <option>Interkulturelles Training</option>
+                <option>Übersetzung (Fach-/Beglaubigt nach Bedarf)</option>
+              </select>
+            </label>
 
-          <label>
-            Format
-            <select name="format">
-              <option value="">Bitte wählen…</option>
-              <option>Online</option>
-              <option>Inhouse (deutschlandweit)</option>
-              <option>Kombination</option>
-            </select>
-          </label>
+            <label>
+              Sprache(n)
+              <input name="languages" type="text" placeholder="z. B. Englisch, Deutsch, Polnisch" />
+            </label>
 
-          <label>
-            Kurzinfo (Ziel, Niveau, Teilnehmerzahl)
-            <textarea name="message" placeholder="z. B. Telefonieren & Präsentieren, B1→B2, 8 TN, 10 Wochen"></textarea>
-          </label>
+            <label>
+              Format
+              <select name="format">
+                <option value="">Bitte wählen…</option>
+                <option>Online</option>
+                <option>Inhouse (deutschlandweit)</option>
+                <option>Kombination</option>
+              </select>
+            </label>
 
-          <button class="btn primary" type="submit">Angebot anfordern</button>
+            <label>
+              Kontakt + Kurzinfo (Ziel, Niveau, Teilnehmerzahl)
+              <textarea name="message" placeholder="z. B. unternehmen@gmail.com , Telefonieren & Präsentieren, B1→B2, 8 TN, 10 Wochen"></textarea>
+            </label>
 
-          <p class="fineprint">
-            Indem Sie absenden, stimmen Sie der Kontaktaufnahme zu. Optional: Verlinken Sie hier Ihre <a href="#impressum">Datenschutzinfo</a>.
-          </p>
-        </form>
-      </aside>
+            <button class="btn primary" type="submit">Jetzt Kursangebot erhalten</button>
+
+            <p class="fineprint">
+              Noch unsicher? <strong>E-Mail hinterlassen & Infomaterial erhalten.</strong><br>
+              Indem Sie absenden, stimmen Sie der Kontaktaufnahme zu. Optional: Verlinken Sie hier Ihre <a href="#impressum">Datenschutzinfo</a>.
+            </p>
+          </form>
+        </aside>
+      </div>
     </div>
   </main>
+
+  <!-- TRUST STATS (placeholders - replace with real numbers) -->
+  <section class="tight" aria-label="Zahlen & Fakten">
+    <div class="container">
+      <div class="grid-3">
+        <div class="card stat">
+          <strong>120+</strong>
+          <span>Unternehmen begleitet (Platzhalter)</span>
+        </div>
+        <div class="card stat">
+          <strong>1.800+</strong>
+          <span>Teilnehmende trainiert (Platzhalter)</span>
+        </div>
+        <div class="card stat">
+          <strong>95 %</strong>
+          <span>Weiterempfehlungsrate (Platzhalter)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEGMENTATION -->
+  <section id="zielgruppen" class="tight" aria-label="Zielgruppen">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Für wen ist kommunikeet gemacht?</h2>
+          <p>Wählen Sie den passenden Einstieg – mit Benefits, die exakt zu Ihrem Kontext passen.</p>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <a class="card seg-card" href="#unternehmen">
+          <h3>Für Unternehmen</h3>
+          <p>Teamtrainings, Business-Kommunikation, Meetings, Calls, E-Mail-Stil – skalierbar und praxisnah.</p>
+        </a>
+
+        <a class="card seg-card" href="#hochschulen">
+          <h3>Für Hochschulen</h3>
+          <p>Akademisches Englisch, Short Courses, Trainings für Verwaltung, Lehre & Forschung – effizient und zielorientiert.</p>
+        </a>
+
+        <a class="card seg-card" href="#privat">
+          <h3>Für Privatpersonen</h3>
+          <p>Beruflich sicher sprechen, präsentieren und schreiben – mit Coaching, das wirklich weiterbringt.</p>
+        </a>
+      </div>
+    </div>
+  </section>
 
   <!-- SERVICES -->
   <section id="leistungen">
@@ -499,7 +643,7 @@
       </div>
 
       <div class="grid-3">
-        <div class="card">
+        <div class="card" id="unternehmen">
           <div class="icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M4 7h16M4 12h16M4 17h10"></path>
@@ -537,17 +681,17 @@
           <strong>Deutschlandweit einsatzbereit</strong>
           <span>Trainer:innen und Formate für Teams in allen Bundesländern – vor Ort oder online.</span>
         </div>
-        <a class="btn primary" href="#angebot">Angebot anfordern →</a>
+        <a class="btn primary" href="#angebot">Kursangebot erhalten →</a>
       </div>
     </div>
   </section>
 
   <!-- FOR WHOM + VALUE -->
-  <section id="fuerwen">
+  <section aria-label="Für wen und Nutzen">
     <div class="container split">
-      <div class="card">
-        <h3>Für wen ist kommunikeet ideal?</h3>
-        <p class="muted">Typische Einsatzfelder, die wir deutschlandweit unterstützen:</p>
+      <div class="card" id="hochschulen">
+        <h3>Typische Einsatzfelder</h3>
+        <p class="muted">Kontexte, die wir deutschlandweit unterstützen:</p>
 
         <ul class="list">
           <li>
@@ -568,7 +712,7 @@
             </span>
             <span><strong>Behörden & Institutionen</strong>: berufsbezogene Sprachkompetenzen für sichere Abläufe.</span>
           </li>
-          <li>
+          <li id="privat">
             <span class="check" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
             </span>
@@ -672,12 +816,47 @@
         </div>
       </div>
 
-      <div class="card quote">
-        <blockquote>
-          „…waren wunschgemäß gute bis hervorragende Fortschritte im Gebrauch der englischen Sprache zu verzeichnen.
-          Dabei übertrafen die tatsächlich realisierten Inhalte das ursprünglich vereinbarte Maß.“
-        </blockquote>
-        <div class="cite">– Unternehmensfeedback (Beispielzitat aus Referenzen)</div>
+      <div class="split">
+        <div class="card">
+          <h3>Messbare Wirkung (Beispiele)</h3>
+          <p class="muted">Platzhalter – bitte durch echte Werte ersetzen.</p>
+          <ul class="list">
+            <li>
+              <span class="check" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+              </span>
+              <span><strong>80 %</strong> fühlen sich sicherer in Meetings (Platzhalter)</span>
+            </li>
+            <li>
+              <span class="check" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+              </span>
+              <span><strong>Spürbare Fortschritte</strong> oft bereits nach wenigen Wochen</span>
+            </li>
+            <li>
+              <span class="check" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+              </span>
+              <span><strong>Hohe Transferquote</strong> durch Praxisfälle aus dem Arbeitsalltag</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card quote">
+          <blockquote>
+            „…waren wunschgemäß gute bis hervorragende Fortschritte im Gebrauch der englischen Sprache zu verzeichnen.
+            Dabei übertrafen die tatsächlich realisierten Inhalte das ursprünglich vereinbarte Maß.“
+          </blockquote>
+          <div class="cite">– Unternehmensfeedback (Beispielzitat aus Referenzen; ideal: Name/Unternehmen ergänzen)</div>
+        </div>
+      </div>
+
+      <div class="band" role="note" aria-label="CTA Feedback">
+        <div>
+          <strong>Sie möchten ähnliche Ergebnisse im Team?</strong>
+          <span>Beschreiben Sie kurz Ihren Bedarf – wir empfehlen ein passendes Format und melden uns schnell.</span>
+        </div>
+        <a class="btn primary" href="#angebot">Kursangebot erhalten →</a>
       </div>
     </div>
   </section>
@@ -697,13 +876,13 @@
             <span class="check" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.8 19.8 0 012.08 4.18 2 2 0 014.06 2h3a2 2 0 012 1.72c.12.86.3 1.7.54 2.5a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.58-1.6a2 2 0 012.11-.45c.8.24 1.64.42 2.5.54A2 2 0 0122 16.92z"/></svg>
             </span>
-            <span><strong>Telefon</strong>: +49 (0)35829 646 060 (Beispiel, bitte bei Bedarf anpassen)</span>
+            <span><strong>Telefon</strong>: +49 (0)35829 646 060 (Beispiel, bitte anpassen)</span>
           </li>
           <li>
             <span class="check" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
             </span>
-            <span><strong>E-Mail</strong>: mail(at)kommunikeet.de (Beispiel, bitte bei Bedarf anpassen)</span>
+            <span><strong>E-Mail</strong>: mail(at)kommunikeet.de (Beispiel, bitte anpassen)</span>
           </li>
           <li>
             <span class="check" aria-hidden="true">
@@ -720,26 +899,31 @@
           </div>
           <a class="btn primary" href="#angebot">Jetzt anfragen →</a>
         </div>
+
+        <!-- MVP Tracking placeholders (optional)
+        <script>
+          // Google Analytics / Plausible / Clarity / Hotjar hier einbinden.
+        </script>
+        -->
       </div>
 
       <div class="card" id="impressum">
         <h3>Impressum & Datenschutz (Platzhalter)</h3>
         <p class="muted">
-          Diese Landingpage ist ein HTML/CSS-Entwurf. Ergänzen Sie hier Ihre rechtlichen Pflichtangaben und verlinken Sie
-          auf die vollständige Datenschutzerklärung Ihrer Domain.
+          
         </p>
         <ul class="list">
           <li>
             <span class="check" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19h16"/><path d="M6 16V8"/><path d="M10 16V5"/><path d="M14 16v-7"/><path d="M18 16v-9"/></svg>
             </span>
-            <span><strong>Tipp</strong>: Nutzen Sie dieselben Angaben wie auf Ihrer Hauptseite (Adresse, Kontakt, Verantwortliche).</span>
+            <span><strong>Tipp</strong>: dieselben Angaben wie auf Hauptseite (Adresse, Kontakt, Verantwortliche).</span>
           </li>
           <li>
             <span class="check" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l7 4v6c0 5-3 9-7 10-4-1-7-5-7-10V6l7-4z"/></svg>
             </span>
-            <span><strong>Formulare</strong>: Hinterlegen Sie einen echten <code>action</code>-Endpunkt (Server/Mailer), sobald verfügbar.</span>
+            
           </li>
         </ul>
       </div>
@@ -765,16 +949,17 @@
         <strong>Navigation</strong>
         <div style="display:grid; gap:8px; margin-top:10px;">
           <a href="#leistungen">Leistungen</a>
+          <a href="#zielgruppen">Für wen?</a>
           <a href="#ablauf">Ablauf</a>
           <a href="#referenzen">Feedback</a>
-          <a href="#angebot">Angebot anfordern</a>
+          <a href="#angebot">Kursangebot erhalten</a>
         </div>
       </div>
 
       <div>
         <strong>Hinweis</strong>
         <p class="muted" style="margin:10px 0 0;">
-          xxx
+          MVP: Bitte Zahlen/Testimonials durch echte Daten ersetzen und Tracking/Heatmaps aktivieren.
         </p>
       </div>
     </div>
@@ -783,5 +968,14 @@
       <span class="muted">© <span id="year">2026</span> kommunikeet – Landingpage Entwurf</span>
     </div>
   </footer>
+
+  <script>
+    // Year
+    (function(){
+      var y = new Date().getFullYear();
+      var el = document.getElementById("year");
+      if(el) el.textContent = y;
+    })();
+  </script>
 </body>
 </html>
