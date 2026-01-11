@@ -230,6 +230,7 @@ section{ padding: 26px 0; }
   border-radius: var(--radius);
   box-shadow: 0 10px 26px rgba(20,34,20,.07);
   padding: 16px;
+  
 }
 .card h3{
   margin: 2px 0 6px;
@@ -750,3 +751,55 @@ footer{
   height: 34px;
 }
 
+/* ================================
+   IMPRESSUM
+================================ */
+
+.impressum-page{
+  background:
+    radial-gradient(900px 600px at 10% 0%, rgba(121,184,75,.14), transparent 55%),
+    radial-gradient(900px 600px at 90% 10%, rgba(168,217,123,.12), transparent 60%),
+    var(--bg);
+}
+
+.impressum-wrap{
+  background: rgba(255,255,255,.85);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 32px;
+}
+
+.impressum-wrap h1{
+  margin-top: 0;
+  margin-bottom: 18px;
+}
+
+.impressum-wrap h2{
+  margin-top: 32px;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.impressum-wrap h3{
+  margin-top: 22px;
+  margin-bottom: 6px;
+  font-size: 16px;
+}
+
+.impressum-wrap p{
+  font-size: 14px;
+  color: rgba(20,34,20,.78);
+  max-width: 70ch;
+}
+
+.impressum-wrap a{
+  text-decoration: underline;
+  text-decoration-color: rgba(121,184,75,.45);
+}
+
+@media (max-width: 700px){
+  .impressum-wrap{
+    padding: 22px;
+  }
+}
