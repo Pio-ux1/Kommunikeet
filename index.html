@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>kommunikeet – Firmensprachkurse & Sprachtraining deutschlandweit</title>
   <meta name="description" content="kommunikeet. DAS SPRACHENINSTITUT – praxisnahe Sprachkurse (Business English, Deutsch als Fremdsprache, Polnisch u. v. m.), online & inhouse deutschlandweit. Jetzt passgenaues Kursangebot erhalten." />
+  <link rel="stylesheet" href="style.css">
 
   <style>
     :root{
@@ -459,16 +460,29 @@
         </div>
       </a>
 
-      <nav aria-label="Navigation">
-        <a class="navlink" href="#leistungen">Leistungen</a>
-        <a class="navlink" href="#zielgruppen">Für wen?</a>
-        <a class="navlink" href="#ablauf">Ablauf</a>
-        <a class="navlink" href="#referenzen">Feedback</a>
-        <a class="btn ghost" href="#kontakt">Kontakt</a>
-        <a class="btn primary" href="#angebot">Kursangebot erhalten</a>
-      </nav>
-    </div>
-  </header>
+      <div class="nav-dropdown-wrapper" data-menu>
+  <button class="iconbtn nav-toggle"
+          type="button"
+          aria-label="Navigation öffnen"
+          aria-haspopup="menu"
+          aria-expanded="false"
+          aria-controls="mainMenu">
+    ☰
+  </button>
+
+   <div class="nav-dropdown" id="mainMenu" role="menu">
+     <a role="menuitem" href="#leistungen">Leistungen</a>
+     <a role="menuitem" href="#zielgruppen">Für wen?</a>
+     <a role="menuitem" href="#ablauf">Ablauf</a>
+     <a role="menuitem" href="#referenzen">Feedback</a>
+     <div class="nav-sep"></div>
+     <a role="menuitem" href="#kontakt">Kontakt</a>
+     <a role="menuitem" class="primary" href="#angebot">Kursangebot erhalten</a>
+   </div>
+  </div>
+
+ </div>
+</header>
 
   <!-- HERO -->
   <main id="top" class="hero">
@@ -968,5 +982,31 @@
       if(el) el.textContent = y;
     })();
   </script>
+  
+<script>
+(function(){
+  var menu = document.querySelector('[data-menu]');
+  if(!menu) return;
+
+  var btn = menu.querySelector('.nav-toggle');
+
+  function close(){
+    menu.classList.remove('is-open');
+    btn.setAttribute('aria-expanded','false');
+  }
+
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var open = menu.classList.toggle('is-open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+
+  document.addEventListener('click', close);
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') close();
+  });
+})();
+</script>
+
 </body>
 </html>

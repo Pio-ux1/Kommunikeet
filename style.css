@@ -803,3 +803,65 @@ footer{
     padding: 22px;
   }
 }
+/* === TOPBAR DROPDOWN MENU (RIGHT) === */
+.nav-dropdown-wrapper{
+  position: relative;
+  margin-left: auto;
+}
+
+.iconbtn{
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  border: 1px solid rgba(20,34,20,.14);
+  background: rgba(255,255,255,.75);
+  box-shadow: 0 10px 24px rgba(20,34,20,.08);
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.nav-dropdown{
+  position: absolute;
+  right: 0;
+  top: calc(100% + 10px);
+  min-width: 260px;
+  padding: 8px;
+  background: rgba(255,255,255,.92);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  display: none;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+
+.nav-dropdown-wrapper.is-open .nav-dropdown{
+  display: block;
+}
+
+.nav-dropdown a{
+  display: block;
+  padding: 12px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  color: rgba(20,34,20,.88);
+}
+
+.nav-dropdown a:hover{
+  background: rgba(121,184,75,.10);
+}
+
+.nav-dropdown .primary{
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  border: 1px solid rgba(20,34,20,.10);
+  color: #0f1b0f;
+  font-weight: 700;
+}
+
+.nav-sep{
+  height: 1px;
+  background: var(--line);
+  margin: 6px;
+}
